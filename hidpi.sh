@@ -45,7 +45,8 @@ langChooseResOp2="(2) 1920x1080 Display (use 1424x802, fix underscaled after sle
 langChooseResOp3="(3) 1920x1200 Display"
 langChooseResOp4="(4) 2560x1440 Display"
 langChooseResOp5="(5) 3000x2000 Display"
-langChooseResOpCustom="(6) Manual input resolution"
+langChooseResOp6="(6) 2560x1600 Display"
+langChooseResOpCustom="(7) Manual input resolution"
 
 if [[ "${systemLanguage}" == "zh_CN" ]]; then
     langDisplay="显示器"
@@ -79,7 +80,9 @@ if [[ "${systemLanguage}" == "zh_CN" ]]; then
     langChooseResOp3="(3) 1920x1200 显示屏"
     langChooseResOp4="(4) 2560x1440 显示屏"
     langChooseResOp5="(5) 3000x2000 显示屏"
-    langChooseResOpCustom="(6) 手动输入分辨率"
+    langChooseResOp6="(6) 2560x1600 显示屏"
+    
+    langChooseResOpCustom="(7) 手动输入分辨率"
 fi
 
 function get_edid() {
@@ -369,6 +372,7 @@ CCC
     echo ${langChooseResOp3}
     echo ${langChooseResOp4}
     echo ${langChooseResOp5}
+    echo ${langChooseResOp6}
     echo ${langChooseResOpCustom}
     echo ""
 
@@ -405,6 +409,12 @@ CCC
         create_res_4 1920x1280 1680x1050 1440x900 1280x800 1024x640 960x540 840x472 800x450 640x360
         ;;
     6)
+        create_res_1 2560x1600 2048x1280 1920x1200 1760x1100 1680x1050 1600x1000 1440x900 1360x850 1280x800
+        create_res_2 2560x1600 1280x800 1280x720 960x600 960x540 640x360
+        create_res_3 2560x1600 1280x800 840x472 800x450 720x405 640x360 576x324 512x288 420x234 400x225 320x180
+        create_res_4 2560x1600 1280x800 1680x945 1440x810 1280x720 1024x576 960x540 840x472 800x450 640x360
+        ;;
+    7)
         custom_res
         create_res_2 1360x765 1280x800 1280x720 960x600 960x540 640x360
         create_res_3 840x472 800x450 720x405 640x360 576x324 512x288 420x234 400x225 320x180
